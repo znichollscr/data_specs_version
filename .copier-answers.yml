@@ -1,0 +1,10 @@
+# Changes here will be overwritten by Copier
+_commit: v0.4.2
+_src_path: gl:openscm/copier-basic-python-repository
+email: zebedee.nicholls@climate-resource.com
+name: Zebedee Nicholls
+notebooks: false
+package_manager: uv
+project_description_short: Prototype to see what it would be like to define a data
+    specs version for CMIP7 based on the state of multiple repositories
+project_url: https://github.com/znichollscr/data_specs_version
