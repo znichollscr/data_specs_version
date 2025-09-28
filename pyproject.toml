@@ -8,7 +8,7 @@ dependencies = [
     "esgvoc>=1.1.2",
     "pre-commit>=3.3.1",
 ]
-name = "prototype"
+name = "data_specs_version"
 version = "0.1.0"
 description = "Prototype to see what it would be like to define a data specs version for CMIP7 based on the state of multiple repositories"
 readme = "README.md"
