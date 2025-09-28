@@ -2,8 +2,10 @@
 authors = [
     { name = "Zebedee Nicholls", email = "zebedee.nicholls@climate-resource.com"},
 ]
-requires-python = ">=3.9"
+requires-python = ">=3.12"
 dependencies = [
+    "cmip7-data-request-api>=1.2.2",
+    "esgvoc>=1.1.2",
     "pre-commit>=3.3.1",
 ]
 name = "prototype"
