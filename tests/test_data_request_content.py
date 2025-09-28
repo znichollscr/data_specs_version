@@ -1,8 +1,6 @@
 """
-Get data request content
+Test data request content against stored values
 """
-
-import json
 
 from data_request_api.content import dump_transformation as dt
 from data_request_api.query import data_request as dr
@@ -41,7 +39,7 @@ def get_value_as_dict(value) -> str:
     return value_dict
 
 
-def main():
+def get_data_request_content():
     """
     Get the data request content
     """
@@ -77,15 +75,15 @@ def main():
         vd = get_value_as_dict(v)
         reg_vals_l.append(vd)
 
-    reg_vals = {
+    res = {
         v["cmip6_compound_name"]: v
         for v in sorted(reg_vals_l, key=lambda x: x["cmip6_compound_name"])
     }
 
-    with open("dr-reg-vals.json", "w") as fh:
-        json.dump(reg_vals, fh, sort_keys=True, indent=2)
-        fh.write("\n")
+    return res
 
 
-if __name__ == "__main__":
-    main()
+def test_data_request_content(data_regression):
+    data_request_content = get_data_request_content()
+
+    data_regression.check(data_request_content)
