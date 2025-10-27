@@ -2,20 +2,11 @@
 Test esgvoc content against stored values
 """
 
-import esgvoc.api as ev
+from esgvoc.apps.cmor_tables import generate_cvs_table
 
 
 def get_esgvoc_content():
-    res = {}
-    for data_descriptor in (
-        "experiment",
-        "source",
-        # TODO: add more data descriptors
-    ):
-        res[data_descriptor] = {
-            v.id: v.model_dump()
-            for v in ev.get_all_terms_in_data_descriptor(data_descriptor)
-        }
+    res = generate_cvs_table(project="cmip7").to_cvs_json()
 
     return res
 

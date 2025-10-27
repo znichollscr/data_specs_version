@@ -137,6 +137,7 @@ source = { virtual = "." }
 dependencies = [
     { name = "cmip7-data-request-api" },
     { name = "esgvoc" },
+    { name = "pint" },
     { name = "pre-commit" },
     { name = "pytest" },
     { name = "pytest-regressions" },
@@ -145,7 +146,8 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "cmip7-data-request-api", specifier = ">=1.2.2" },
-    { name = "esgvoc", specifier = ">=1.1.2" },
+    { name = "esgvoc", git = "https://github.com/znichollscr/esgf-vocab.git?rev=86412e104d61cb2acce346be839d755c5a806443" },
+    { name = "pint", specifier = ">=0.25" },
     { name = "pre-commit", specifier = ">=3.3.1" },
     { name = "pytest", specifier = ">=8.4.2" },
     { name = "pytest-regressions", specifier = ">=2.8.3" },
@@ -162,8 +164,8 @@ wheels = [
 
 [[package]]
 name = "esgvoc"
-version = "1.1.2"
-source = { registry = "https://pypi.org/simple" }
+version = "1.1.3"
+source = { git = "https://github.com/znichollscr/esgf-vocab.git?rev=86412e104d61cb2acce346be839d755c5a806443#86412e104d61cb2acce346be839d755c5a806443" }
 dependencies = [
     { name = "idna" },
     { name = "jinja2" },
@@ -176,10 +178,6 @@ dependencies = [
     { name = "sqlmodel" },
     { name = "toml" },
     { name = "typer" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/59/5b/a9d8089140ae8ed40e7207298e3806f4df7a60e9bbf49539cc2398c37233/esgvoc-1.1.2.tar.gz", hash = "sha256:42e663fc079c7886bd22fedbdd2382122f8716f0275450c0699f79320cb603ed", size = 5408738, upload-time = "2025-09-22T13:02:44.206Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/39/19/a632bfcebcd17c711214900a513776cc02043823bf71cef005dcca95f6a5/esgvoc-1.1.2-py3-none-any.whl", hash = "sha256:55046df2c5166cced1799f3ebf595bf582079a33ae91ac8edca692fef8594a18", size = 131891, upload-time = "2025-09-22T13:02:41.737Z" },
 ]
 
 [[package]]
@@ -198,6 +196,30 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/40/bb/0ab3e58d22305b6f5440629d20683af28959bf793d98d11950e305c1c326/filelock-3.19.1.tar.gz", hash = "sha256:66eda1888b0171c998b35be2bcc0f6d75c388a7ce20c3f3f37aa8e96c2dddf58", size = 17687, upload-time = "2025-08-14T16:56:03.016Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/42/14/42b2651a2f46b022ccd948bca9f2d5af0fd8929c4eec235b8d6d844fbe67/filelock-3.19.1-py3-none-any.whl", hash = "sha256:d38e30481def20772f5baf097c122c3babc4fcdb7e14e57049eb9d88c6dc017d", size = 15988, upload-time = "2025-08-14T16:56:01.633Z" },
+]
+
+[[package]]
+name = "flexcache"
+version = "0.3"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "typing-extensions" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/55/b0/8a21e330561c65653d010ef112bf38f60890051d244ede197ddaa08e50c1/flexcache-0.3.tar.gz", hash = "sha256:18743bd5a0621bfe2cf8d519e4c3bfdf57a269c15d1ced3fb4b64e0ff4600656", size = 15816, upload-time = "2024-03-09T03:21:07.555Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/27/cd/c883e1a7c447479d6e13985565080e3fea88ab5a107c21684c813dba1875/flexcache-0.3-py3-none-any.whl", hash = "sha256:d43c9fea82336af6e0115e308d9d33a185390b8346a017564611f1466dcd2e32", size = 13263, upload-time = "2024-03-09T03:21:05.635Z" },
+]
+
+[[package]]
+name = "flexparser"
+version = "0.4"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "typing-extensions" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/82/99/b4de7e39e8eaf8207ba1a8fa2241dd98b2ba72ae6e16960d8351736d8702/flexparser-0.4.tar.gz", hash = "sha256:266d98905595be2ccc5da964fe0a2c3526fbbffdc45b65b3146d75db992ef6b2", size = 31799, upload-time = "2024-11-07T02:00:56.249Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/fe/5e/3be305568fe5f34448807976dc82fc151d76c3e0e03958f34770286278c1/flexparser-0.4-py3-none-any.whl", hash = "sha256:3738b456192dcb3e15620f324c447721023c0293f6af9955b481e91d00179846", size = 27625, upload-time = "2024-11-07T02:00:54.523Z" },
 ]
 
 [[package]]
@@ -475,6 +497,21 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz", hash = "sha256:d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f", size = 165727, upload-time = "2025-04-19T11:48:59.673Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/20/12/38679034af332785aac8774540895e234f4d07f7545804097de4b666afd8/packaging-25.0-py3-none-any.whl", hash = "sha256:29572ef2b1f17581046b3a2227d5c611fb25ec70ca1ba8554b24b0e69331a484", size = 66469, upload-time = "2025-04-19T11:48:57.875Z" },
+]
+
+[[package]]
+name = "pint"
+version = "0.25"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "flexcache" },
+    { name = "flexparser" },
+    { name = "platformdirs" },
+    { name = "typing-extensions" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/5a/cb/e6ffaf3d019e8501b1264dac529bf829ac2f1fe1d488cfcf67f1fccadacf/pint-0.25.tar.gz", hash = "sha256:22911a30d682ee0540d656571c19a7b1806ce00b2be88a16f67218108b7b8cc2", size = 253010, upload-time = "2025-08-15T19:49:12.72Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/76/cc/c528311d798e22ec884b816e8aa2989e0f1f28cdc8e5969e2be5f10bce85/pint-0.25-py3-none-any.whl", hash = "sha256:cc20ae3dff010b9bbea41fb80c2de008f683cc83512cea73633d55aead80aa1e", size = 305462, upload-time = "2025-08-15T19:49:11.083Z" },
 ]
 
 [[package]]

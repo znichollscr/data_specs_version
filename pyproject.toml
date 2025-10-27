@@ -5,7 +5,9 @@ authors = [
 requires-python = ">=3.12"
 dependencies = [
     "cmip7-data-request-api>=1.2.2",
-    "esgvoc>=1.1.2",
+    # "esgvoc>=1.1.2",
+    "esgvoc",
+    "pint>=0.25",
     "pre-commit>=3.3.1",
     "pytest>=8.4.2",
     "pytest-regressions>=2.8.3",
@@ -17,6 +19,10 @@ readme = "README.md"
 
 [tool.uv]
 package = false
+
+[[tool.uv.sources.esgvoc]]
+git = "https://github.com/znichollscr/esgf-vocab.git"
+rev = "86412e104d61cb2acce346be839d755c5a806443"
 
 [tool.ruff.lint]
 select = [
