@@ -13,7 +13,7 @@ dependencies = [
     "pytest-regressions>=2.8.3",
 ]
 name = "data_specs_version"
-version = "2025.10-alpha"
+version = "2025.10.1"
 description = "Prototype to see what it would be like to define a data specs version for CMIP7 based on the state of multiple repositories"
 readme = "README.md"
 
